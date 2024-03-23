@@ -1,0 +1,35 @@
+{% if messages %}
+
+    <div class="sys-message">
+
+        <div class="message-title">
+            <i class="fa-solid fa-bell"></i>
+            <h3>Opa! Tem mensagens para você...</h3>
+        </div>
+
+        {% for message in messages %}
+
+            <div class="message {{ message.tags }}">
+                <p>
+                    <span>
+                        {% if message.tags == 'success' %}
+                            <i class="fa-solid fa-circle-check"></i>
+                        {% endif %}
+                        {% if message.tags == 'error' %}
+                            <i class="fa-solid fa-bug"></i>
+                        {% endif %}
+                        {% if message.tags == 'warning' %}
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        {% endif %}
+                        {% if message.tags == 'info' %}
+                            <i class="fa-solid fa-question"></i>
+                        {% endif %}
+                    </span>
+                    {{ message }}
+                </p>
+            </div>
+
+        {% endfor %}
+    </div>
+
+{% endif %}

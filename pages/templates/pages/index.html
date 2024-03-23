@@ -1,0 +1,272 @@
+{% extends "global/base.html" %}
+{% load static %}
+
+{% block additional_style %}
+    <link rel="stylesheet" href="{% static "pages/css/index.css" %}">
+{% endblock additional_style %}
+
+{% block menu_links %}
+
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">Sobre</a></li>
+    <li><a href="#services">Serviços</a></li>
+
+    {% if projects %}
+        <li><a href="#projects">Projetos</a></li>
+    {% endif %}
+
+    <li><a href="#contact">contato</a></li>
+
+{% endblock menu_links %}
+
+{% block content %}
+    <section id="home" class="full-page centralized-content">
+        <div class="main-content">
+            <div class="home-container">
+                <div class="logo-container">
+                    <h1 class="title"><span>H</span>ericlys.<span>D</span>ev</h1>
+                    <p class="sub-title code">Desenvolvedor de jogos e sistemas</p>
+                </div>
+                <a href="#contact">
+                    <button class="button">
+                        <span class="button_lg">
+                            <span class="button_sl"></span>
+                            <span class="button_text">Iniciar projeto</span>
+                        </span>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="main-content centralized-content">
+            <div class="about">
+                <div class="about-info">
+                    <h2>Um pouco sobre mim:</h2>
+                    <p class="code">Opa! Tudo bom? Me chamo Hericlys de Sá, sou desenvolvedor a mais de 5 anos e minha especialidade é tirar ideias do papel.</p>
+                    <p class="code">Também sou apaixonado pelo mundo da programação e por isso dedico meu tempo a ensinar novas mentes a conhecer esse mundo incrível.</p>
+                </div>
+                <div class="about-profile">
+                    <img src="{% static 'pages/images/profile.jpg' %}" alt="">
+                    <h1>Hericlys de Sá</h1>
+                    <div class="social-media">
+                        <a href="https://www.instagram.com/hericlys_/" target="_blank" class="instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/message/4T5NTPFN5P2OP1" target="_blank" class="whatsapp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCLZojhcSMDBjCg1e64z6oVg" target="_blank" class="youtube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/hericlysdesa/" target="_blank" class="linkedin">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="https://discord.com/channels/1128104019894747186" target="_blank" class="discord">
+                            <i class="fa-brands fa-discord"></i>
+                        </a>
+                    </div>
+                    <div class="split-effect">
+                    </div>
+                </div>
+                <div class="about-info">
+                    <h2>Habilidades</h2>
+                    <p class="code"> -Amplo conhecimento em linguagem como Python, C#, JavaScript, SQL e outras.</p>
+                    <p class="code"> -Dominio de framework como Django, Unity, .Net e etc.</p>
+                    <p class="code"> -Comunicação simples e diretas para facilitar o entendimento com pessoas que não são da área de TI</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="full-page centralized-content">
+        <div class="main-content">
+            <div class="services centralized-content">
+                <div class="section-header">
+                    <h2>Serviços</h2>
+                    <p>Se você está em busca de soluções tecnológicas eficientes e sob medida, você está no lugar certo. Deixe-me ajudar a transformar suas ideias em realidade.</p>
+                </div>
+                <div class="services-container">
+                    <div class="service-card">
+                        <div class="service-card-icon-container">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <div class="service-card-info">
+                            <h3>Desenvolvimento de software personalizado</h3>
+                            <p class="code">
+                                Criamos aplicativos e sistemas personalizados sob medida para atender 
+                                às suas necessidades específicas. Desde o planejamento até a implantação, 
+                                garantimos que sua solução seja eficiente, escalável e segura.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-card-icon-container">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <div class="service-card-info">
+                            <h3>Manutenção e Otimização de Sistemas</h3>
+                            <p class="code">
+                                Mantenha seus sistemas em perfeito funcionamento. 
+                                Fornecemos suporte contínuo, atualizações de segurança 
+                                e otimização para garantir que seu software opere com eficiência máxima.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-card-icon-container">
+                            <i class="fa-brands fa-connectdevelop"></i>
+                        </div>
+                        <div class="service-card-info">
+                            <h3>Desenvolvimento Web</h3>
+                            <p class="code">
+                                Construção de sites e aplicações web modernos e responsivos. 
+                                Nossa expertise em HTML, CSS e JavaScript garante que sua 
+                                presença online seja cativante e funcional em todos os dispositivos
+                            </p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-card-icon-container">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <div class="service-card-info">
+                            <h3>Integração de Bancos de Dados e SQL</h3>
+                            <p class="code">
+                                Resolvo integrações de bancos de dados e consultas 
+                                SQL complexas para extrair insights valiosos de seus dados. 
+                                Isso ajuda na tomada de decisões baseadas em dados sólidos.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-card-icon-container">
+                            <i class="fa-solid fa-gamepad"></i>
+                        </div>
+                        <div class="service-card-info">
+                            <h3>Desenvolvimento de Jogos</h3>
+                            <p class="code">
+                                Transformamos suas ideias de jogos em realidade. Com expertise em desenvolvimento de jogos 2D e 3D, 
+                                criamos experiências envolventes para diversas plataformas. Desde conceitos iniciais até a publicação, 
+                                cuidamos de cada etapa do processo.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-card-icon-container">
+                            <i class="fa-solid fa-pen-nib"></i>
+                        </div>
+                        <div class="service-card-info">
+                            <h3>Design de Arte para Jogos</h3>
+                            <p class="code">
+                                A estética de um jogo desempenha um papel fundamental na experiência do jogador. 
+                                Oferecemos serviços de design de arte de alta qualidade, criando personagens, cenários, 
+                                animações e elementos visuais que tornam seu jogo cativante e memorável.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="full-page centralized-content">
+        <div class="main-content">
+            <div class="contact">
+                <div class="section-header">
+                    <h2>Contato</h2>
+                    <p>
+                        Se você está buscando soluções eficazes para suas necessidades de 
+                        desenvolvimento, não hesite em entrar em contato. 
+                        Basta preencher o formulário abaixo, descrever seu 
+                        projeto ou pergunta, e vamos da inicio ao seu sonho.
+                    </p>
+                </div>
+                <div class="centralized-content contact-form-container">
+                    {% include "global/partials/message.html" %}
+                    <form action="#" method="post" id="contact-form">
+                        {% csrf_token %}
+                        <div class="form">
+                            <div class="inputs-container">
+    
+                                <div class="input-container centralized-content">
+                                    <label for="first_name">Nome</label>
+                                    <input
+                                        type="text" name="first_name" id="first_name" maxlength="25"
+                                        minlength="2" required placeholder="Digite seu nome"
+                                        value="{{form_content.first_name}}"
+                                    >
+                                </div>
+    
+                                <div class="input-container centralized-content">
+                                    <label for="last_name">Sobrenome</label>
+                                    <input
+                                        type="text" name="last_name" id="last_name" maxlength="25"
+                                        minlength="2" required placeholder="Digite seu sobrenome"
+                                        value="{{form_content.last_name}}"
+                                    >
+                                </div>
+    
+                                <div class="input-container centralized-content">
+                                    <label for="phone">Telefone</label>
+                                    <input
+                                        type="tel" name="phone" id="phone" maxlength="15"
+                                        minlength="15" pattern="(?=.*[0-9]).{15,}"
+                                        required placeholder="(00) 00000-0000"
+                                        value="{{form_content.phone}}"
+                                    >
+                                </div>
+    
+                                <div class="input-container centralized-content">
+                                    <label for="email">E-mail</label>
+                                    <input
+                                        type="email" name="email" id="email" maxlength="50"
+                                        pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                                        required placeholder="SeuMelhor@email.com"
+                                        value="{{form_content.email}}"
+                                    >
+                                </div>
+    
+                            </div>
+    
+                            <div class="message-container">
+    
+                                <div class="input-container centralized-content">
+                                    <label for="project-type">Tipo de projeto</label>
+                                    <select name="project-type" id="project-type" required>
+                                        <option value="dev-web">Desenvolvimento web</option>
+                                        <option value="dev-game">Desenvolvimento de jogos</option>
+                                        <option value="game-arte">Artes para jogos</option>
+                                        <option value="dev-software">software personalizado</option>
+                                        <option value="Manutenção">Manutenção e Otimização de Sistemas</option>
+                                        <option value="consultoria">Consultoria</option>
+                                        <option value="outros">Outros</option>
+                                    </select>
+                                </div>
+    
+                                <div class="input-container centralized-content">
+                                    <label for="project-descript">Descrição</label>
+                                    <textarea name="project-descript" id="project-descript" cols="30" minlength="50" rows="10" required placeholder="Descreva o projeto que tem em mente...">{{conteudo_form.mensagem}}</textarea>
+                                </div>
+                    
+                            </div>
+
+                        </div>
+                        <button class="button" type="submit">
+                            <span class="button_lg">
+                                <span class="button_sl"></span>
+                                <span class="button_text">Enviar</span>
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
+
+{% block additional_script %}
+    <script src="{% static 'pages/js/index.js' %}"></script>
+{% endblock additional_script %}
