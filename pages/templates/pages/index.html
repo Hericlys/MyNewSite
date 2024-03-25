@@ -10,11 +10,6 @@
     <li><a href="#home">Home</a></li>
     <li><a href="#about">Sobre</a></li>
     <li><a href="#services">Serviços</a></li>
-
-    {% if projects %}
-        <li><a href="#projects">Projetos</a></li>
-    {% endif %}
-
     <li><a href="#contact">contato</a></li>
 
 {% endblock menu_links %}
@@ -27,7 +22,7 @@
                     <h1 class="title"><span>H</span>ericlys.<span>D</span>ev</h1>
                     <p class="sub-title code">Desenvolvedor de jogos e sistemas</p>
                 </div>
-                <a href="#contact">
+                <a href="#contact" class="button_container">
                     <button class="button">
                         <span class="button_lg">
                             <span class="button_sl"></span>
@@ -42,7 +37,7 @@
     <section id="about">
         <div class="main-content centralized-content">
             <div class="about">
-                <div class="about-info">
+                <div class="about-info about_info_lef">
                     <h2>Um pouco sobre mim:</h2>
                     <p class="code">Opa! Tudo bom? Me chamo Hericlys de Sá, sou desenvolvedor a mais de 5 anos e minha especialidade é tirar ideias do papel.</p>
                     <p class="code">Também sou apaixonado pelo mundo da programação e por isso dedico meu tempo a ensinar novas mentes a conhecer esse mundo incrível.</p>
@@ -70,7 +65,7 @@
                     <div class="split-effect">
                     </div>
                 </div>
-                <div class="about-info">
+                <div class="about-info about_info_right">
                     <h2>Habilidades</h2>
                     <p class="code"> -Amplo conhecimento em linguagem como Python, C#, JavaScript, SQL e outras.</p>
                     <p class="code"> -Dominio de framework como Django, Unity, .Net e etc.</p>
@@ -183,7 +178,7 @@
                         projeto ou pergunta, e vamos da inicio ao seu sonho.
                     </p>
                 </div>
-                <div class="centralized-content contact-form-container">
+                <div class="centralized-content contact-form-container slideUp">
                     {% include "global/partials/message.html" %}
                     <form action="{% url "jobys:new_joby" %}#contact" method="post" id="contact-form">
                         {% csrf_token %}
