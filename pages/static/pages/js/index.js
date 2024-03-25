@@ -22,14 +22,14 @@ var button_container = {
 var about_info_lef = {
     duration: 2000,
     rotate: {x: 0, y:80, z:15},
-    distance: '150%',
+    distance: '50%',
     origin: 'left',
 }
 
 var about_info_right = {
     duration: 2000,
     rotate: {x: 0, y:80, z:-15},
-    distance: '150%',
+    distance: '50%',
     origin: 'right',
 }
 
@@ -43,7 +43,7 @@ var service_card = {
     rotate: {x: 0, y:80, z:0},
     delay: 300,
     interval: 100,
-    reset: false,
+    reset: true,
 }
 
 var section_header = {
