@@ -185,7 +185,7 @@
                 </div>
                 <div class="centralized-content contact-form-container">
                     {% include "global/partials/message.html" %}
-                    <form action="#" method="post" id="contact-form">
+                    <form action="{% url "jobys:new_joby" %}#contact" method="post" id="contact-form">
                         {% csrf_token %}
                         <div class="form">
                             <div class="inputs-container">
