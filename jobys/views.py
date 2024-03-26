@@ -1,6 +1,7 @@
 from django.shortcuts import redirect
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
+from django.core.mail import send_mail
 from django.contrib import messages
 from .models import Joby
 
@@ -54,6 +55,13 @@ def new_joby(request) -> redirect:
         )
 
         create_new_joby.save()
+
+    send_mail(
+        'Assunto',
+        'Esse é o email de teste que estou te enviando',
+        'webmail@mail.com',
+        ['hericlysdesa@gmail.com']
+    )
 
     messages.success(
         request,
