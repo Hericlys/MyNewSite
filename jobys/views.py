@@ -1,8 +1,11 @@
 from django.shortcuts import redirect
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
-from django.core.mail import send_mail
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
 from django.contrib import messages
+from django.conf import settings
 from .models import Joby
 
 
@@ -15,6 +18,7 @@ def new_joby(request) -> redirect:
         project_type = request.POST.get('project-type')
         project_description = request.POST.get('project-description')
 
+        # Validation
         if len(first_name) < 2 and len(last_name) < 2:
             messages.error(
                 request,
@@ -44,7 +48,8 @@ def new_joby(request) -> redirect:
                 'Não seja timido(a) me fale mais sobre seu projeto.'
             )
             return redirect("pages:home")
-
+        
+        # Created new joby
         create_new_joby = Joby(
             customer_first_name=first_name,
             customer_last_name=last_name,
@@ -55,17 +60,32 @@ def new_joby(request) -> redirect:
         )
 
         create_new_joby.save()
+        
+        # send e-mail
+        html_content = render_to_string(
+            'jobys/email/new_joby.html', 
+            {
+                'customer_full_name': first_name + ' ' + last_name,
+                'project_type':project_type,
+            }
+        )
 
-    send_mail(
-        'Assunto',
-        'Esse é o email de teste que estou te enviando',
-        'webmail@mail.com',
-        ['hericlysdesa@gmail.com']
-    )
+        text_content = strip_tags(html_content)
 
-    messages.success(
-        request,
-        'Pedido enviado com sucesso! Verifique seu E-mail'
-    )
+        email = EmailMultiAlternatives(
+            'Confirmação de pedido de orçamento',
+            text_content,
+            settings.EMAIL_HOST_USER,
+            [f'{email}',]
+        )
+
+        email.attach_alternative(html_content, 'text/html')
+        email.send()
+
+        # Message to User
+        messages.success(
+            request,
+            'Pedido enviado com sucesso! Verifique seu E-mail'
+        )
 
     return redirect("pages:home")
