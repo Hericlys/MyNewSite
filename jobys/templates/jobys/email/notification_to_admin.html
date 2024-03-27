@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@400;700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <style>        
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 50px;
+        }
+        
+        p {
+            font-family: 'JetBrains Mono', sans-serif;
+        }
+
+        span {
+            color: #D92525;
+        }
+
+        html {
+            background: #1e1e1e;
+            color: #f3f3f3;
+        }
+
+        .logo-container {
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .text-container p {
+            font-family: 'JetBrains Mono', sans-serif;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="logo-container">
+            <h1 class="title"><span>H</span>ericlys.<span>D</span>ev</h1>
+            <p class="sub-title">Desenvolvedor de jogos e sistemas</p>
+        </div>
+        <div class="text-container">
+            <p>Opa, {{customer_full_name}} te enviou um pedido de orçamento.</p>
+            <p>Telefone: {{phone}}</p>
+            <p>Tipo de requerimento: {{project_type}}</p>
+            <p>Descrição do projeto: {{project_description}}</p>
+            <p>data: {% now "d/M/Y" %}</p>
+        </div>
+    </div>
+
+</body>
+</html>
+

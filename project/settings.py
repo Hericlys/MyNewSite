@@ -132,7 +132,7 @@ STATIC_ROOT = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-if not DEBUG:
+if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -142,3 +142,4 @@ else:
     EMAIL_USE_TLS = config('EMAIL_USE_TLS')
     EMAIL_PORT = config('EMAIL_PORT')
     EMAIL_HOST = config('EMAIL_HOST')
+    DEFAULT_EMAIL_NOTIFICATION = config('DEFAULT_EMAIL_NOTIFICATION')

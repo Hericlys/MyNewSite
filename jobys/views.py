@@ -63,10 +63,10 @@ def new_joby(request) -> redirect:
         
         # send e-mail
         html_content = render_to_string(
-            'jobys/email/new_joby.html', 
+            'jobys/email/new_joby.html',
             {
                 'customer_full_name': first_name + ' ' + last_name,
-                'project_type':project_type,
+                'project_type': project_type,
             }
         )
 
@@ -81,6 +81,29 @@ def new_joby(request) -> redirect:
 
         email.attach_alternative(html_content, 'text/html')
         email.send()
+
+        # E-mail to Admin
+        html_content_2 = render_to_string(
+            'jobys/email/notification_to_admin.html',
+            {
+                'customer_full_name': first_name + ' ' + last_name,
+                'project_type': project_type,
+                'project_description': project_description,
+                'phone': phone,
+            }
+        )
+
+        text_content_2 = strip_tags(html_content_2)
+
+        email_2 = EmailMultiAlternatives(
+            'Confirmação de pedido de orçamento',
+            text_content_2,
+            settings.EMAIL_HOST_USER,
+            [str(settings.DEFAULT_EMAIL_NOTIFICATION),]
+        )
+
+        email_2.attach_alternative(html_content_2, 'text/html')
+        email_2.send()
 
         # Message to User
         messages.success(
